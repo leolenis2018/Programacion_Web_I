@@ -21,6 +21,7 @@ echo($productos[0][1]);
 //recorro el arreglo:
 echo("<br>");
 echo("<br>");
+
 foreach($productos as $producto){
 
    echo($producto[0]);
