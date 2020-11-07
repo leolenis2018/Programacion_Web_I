@@ -5,16 +5,28 @@ include("BaseDatos.php");
 if (isset($_POST["botonEnvio"])) {
 
 
-    //Recibir los datos desde la vista (Interfaz de Usuario)
+    // 1. //Recibir los datos desde la vista (Interfaz de Usuario)
 
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
     $descripcion = $_POST["descripcion"];
     $genero = $_POST["genero"];
 
-    // Crear una copia de la clase BaseDatos
-    // Crear un objeto de la clase BaseDatos
+    //2.// Crear una copia de la clase BaseDatos
+    //Crear un objeto de la clase BaseDatos
+    $transaccion = new BaseDatos();
 
-    $transaccion=new BaseDatos();
-    $transaccion->conectarBD();
+    // 3. Crear una consulta SQL
+
+    $consultaSQL = "INSERT INTO usuarios(nombre, apellido, descripcion, genero) VALUES ('$nombre','$apellido', '$descripcion', '$genero' )";
+
+    //4. Utlizar la funcion para insertar datos de la clase BD
+
+    $transaccion->agregarDatos($consultaSQL);
+
+
+
+
+    //''
+
 }

@@ -47,6 +47,7 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-info btn-block" name="botonEnvio">Registrar</button>
+                <button type="submit" class="btn btn-info btn-block" name="botonConsulta">Consultar</button>
             </form>
         </div>
     
