@@ -27,6 +27,25 @@ if (isset($_POST["botonEnvio"])) {
 
 
 
-    //''
+    
+
+}else 
+if (isset($_POST["botonConsulta"])){
+
+    $nombre = $_POST["nombre"];
+    $apellido = $_POST["apellido"];
+    $descripcion = $_POST["descripcion"];
+  
+
+    $transaccion = new BaseDatos();
+
+    // 3. Crear una consulta SQL
+
+    $consultaSQL = "INSERT INTO usuarios(nombre, apellido, descripcion, genero) VALUES ('$nombre','$apellido', '$descripcion', '$genero' )";
+
+    //4. Utlizar la funcion para insertar datos de la clase BD
+
+    $transaccion->agregarDatos($consultaSQL);
+
 
 }

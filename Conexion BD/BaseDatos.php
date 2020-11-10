@@ -14,8 +14,6 @@ class BaseDatos
     {
     }
 
-
-
     //metodos == funciones
 
     public function conectarBD()
@@ -65,9 +63,48 @@ class BaseDatos
 
         //4. Ejecutar la consulta.
 
-        $consultaBuscarDatos->execute(); 
+        $consultaBuscarDatos->execute();
 
         //5. Retornar los Datos consultados
         return ($consultaBuscarDatos->fetchAll());
+    }
+
+    public function editarDatos($consultaSQL)
+
+    { //Accedemos a la base de Datos
+        $conexionBD = $this->conectarBD();
+
+        // Instanciamos la clase
+        $editarDatos = $conexionBD->prepare($consultaSQL);
+
+        //ejecutamos la operacion
+        $resultado = $editarDatos->execute();
+
+        if ($resultado) {
+            echo ("Editado con exito");
+        } else {
+            echo ("Error al Editar");
+        }
+    }
+    public function eliminarDatos($consultaSQL)
+    {
+        //Accedemos a la base de Datos
+        $conexionBD = $this->conectarBD();
+
+        // Instanciamos la clase
+        $eliminarDatos = $conexionBD->prepare($consultaSQL);
+
+
+        //ejecutamos la operacion
+        $resultado = $eliminarDatos->execute();
+
+        if ($resultado) {
+            echo ("Eliminado con exito");
+        } else {
+            echo ("Error al Eliminar");
+        }
+
+
+
     }
 }
