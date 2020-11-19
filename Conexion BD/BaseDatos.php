@@ -69,9 +69,31 @@ class BaseDatos
         return ($consultaBuscarDatos->fetchAll());
     }
 
+    public function eliminarDatos($consultaSQL)
+    {
+        //Accedemos a la base de Datos
+        $conexionBD = $this->conectarBD();
+
+        // Instanciamos la clase
+        $eliminarDatos = $conexionBD->prepare($consultaSQL);
+
+        //ejecutamos la operacion
+        $resultado = $eliminarDatos->execute();
+
+        if ($resultado) {
+            echo ("Eliminado con exito");
+        } else {
+            echo ("Error al Eliminar");
+        }
+
+
+
+    }
+
     public function editarDatos($consultaSQL)
 
-    { //Accedemos a la base de Datos
+    { 
+        //Accedemos a la base de Datos
         $conexionBD = $this->conectarBD();
 
         // Instanciamos la clase
@@ -86,25 +108,5 @@ class BaseDatos
             echo ("Error al Editar");
         }
     }
-    public function eliminarDatos($consultaSQL)
-    {
-        //Accedemos a la base de Datos
-        $conexionBD = $this->conectarBD();
-
-        // Instanciamos la clase
-        $eliminarDatos = $conexionBD->prepare($consultaSQL);
-
-
-        //ejecutamos la operacion
-        $resultado = $eliminarDatos->execute();
-
-        if ($resultado) {
-            echo ("Eliminado con exito");
-        } else {
-            echo ("Error al Eliminar");
-        }
-
-
-
-    }
+    
 }
