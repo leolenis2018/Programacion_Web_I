@@ -10,7 +10,9 @@ $id=$_GET["id"];
 $transaccion = new BaseDatos();
 
 //3. Crear una consulta SQL para elimiar datos
-$consultaSQL = "DELETE FROM usuarios WHERE idUsuario='$id' ";
+$consultaSQL = "DELETE FROM usuarios WHERE id_Usuario='$id' ";
 
 //4. Utilizar el metodo eliminarDatos
 $transaccion->eliminarDatos($consultaSQL);
+
+?>

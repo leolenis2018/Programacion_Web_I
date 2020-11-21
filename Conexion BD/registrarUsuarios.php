@@ -24,5 +24,8 @@ if (isset($_POST["botonEnvio"])) {
 
     $transaccion->agregarDatos($consultaSQL);
 
+    //5. Redireccion
+    header("location:formularioRegistro.php");
+
     
 }

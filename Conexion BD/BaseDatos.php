@@ -94,13 +94,13 @@ class BaseDatos
 
     { 
         //Accedemos a la base de Datos
-        $conexionBD = $this->conectarBD();
+        $conexionBD=$this->conectarBD();
 
         // Instanciamos la clase
-        $editarDatos = $conexionBD->prepare($consultaSQL);
+        $editarDatos=$conexionBD->prepare($consultaSQL);
 
         //ejecutamos la operacion
-        $resultado = $editarDatos->execute();
+        $resultado=$editarDatos->execute();
 
         if ($resultado) {
             echo ("Editado con exito");
