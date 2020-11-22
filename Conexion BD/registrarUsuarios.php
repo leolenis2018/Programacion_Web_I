@@ -11,6 +11,7 @@ if (isset($_POST["botonEnvio"])) {
     $apellido = $_POST["apellido"];
     $descripcion = $_POST["descripcion"];
     $genero = $_POST["genero"];
+    $foto= $_POST["foto"];
 
     //2.// Crear una copia de la clase BaseDatos
     //Crear un objeto de la clase BaseDatos
@@ -18,7 +19,7 @@ if (isset($_POST["botonEnvio"])) {
 
     // 3. Crear una consulta SQL
 
-    $consultaSQL = "INSERT INTO usuarios(nombre, apellido, descripcion, genero) VALUES ('$nombre','$apellido', '$descripcion', '$genero' )";
+    $consultaSQL = "INSERT INTO usuarios(nombre, apellido, descripcion, genero, foto) VALUES ('$nombre','$apellido', '$descripcion', '$genero', '$foto')";
 
     //4. Utlizar la funcion para insertar datos de la clase BD
 

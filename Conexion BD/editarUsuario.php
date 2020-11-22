@@ -11,19 +11,18 @@ if (isset($_POST["botonEditar"])) {
 
     $nombre = $_POST["nombreEditar"];
     $descripcion = $_POST["descripcionEditar"];
+    $foto= $_POST["foto"];
 
 }
-
 
 //3. Utilizar o crear un objeto de la clase Base Datos
 $transaccion = new BaseDatos();
 
-
 //4. Crear una consulta SQL para editar datos
-$consultaSQL = "UPDATE usuarios SET nombre='$nombre', descripcion='$descripcion' WHERE id_Usuario='$id' ";
+$consultaSQL = "UPDATE usuarios SET nombre='$nombre', descripcion='$descripcion', foto='$foto' WHERE id_Usuario='$id' ";
 
-//4. Utilizar el metodo editarDatos
+//5. Utilizar el metodo editarDatos
 $transaccion->editarDatos($consultaSQL);
 
- //5. Redireccion
-// header("location:listaUsuarios.php");
+ //6. Redireccion
+ header("location:listaUsuarios.php");

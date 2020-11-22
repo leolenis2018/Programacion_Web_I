@@ -41,13 +41,13 @@
                             <h3 class="card-title"><?php echo ($usuario["nombre"]) ?></h3>
                             <p class="card-text"><?php echo ($usuario["descripcion"]) ?></p>
                             <a href="eliminarUsuarios.php?id=<?php echo ($usuario["id_Usuario"]) ?>" class="btn btn-danger">Eliminar</a>
-                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editar<?php echo ($usuario["id_Usuario"])?>">
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editar<?php echo ($usuario["id_Usuario"]) ?>">
                                 Editar
                             </button>
                         </div>
                     </div>
 
-                    <div class="modal fade" id="editar<?php echo ($usuario["id_Usuario"])?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="editar<?php echo ($usuario["id_Usuario"]) ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -57,15 +57,22 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="editarUsuario.php?id=<?php echo($usuario["id_Usuario"]) ?>" method="POST">
+                                    <form action="editarUsuario.php?id=<?php echo ($usuario["id_Usuario"]) ?>" method="POST">
                                         <div class="form-group">
                                             <label>Nombre</label>
-                                            <input type="text" class="form-control" name="nombreEditar" value="<?php echo($usuario["nombre"]) ?>">
+                                            <input type="text" class="form-control" name="nombreEditar" value="<?php echo ($usuario["nombre"]) ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Descripcion</label>
-                                            <textarea class="form-control" name="descripcionEditar" id="exampleFormControlTextarea1" rows="3"><?php echo($usuario["descripcion"]) ?> </textarea>
+                                            <textarea class="form-control" name="descripcionEditar" id="exampleFormControlTextarea1" rows="3"><?php echo ($usuario["descripcion"]) ?> </textarea>
                                         </div>
+                                        <div class="row mt-3">
+                                            <div class="col">
+                                                <label class="font-weight-bold">Foto:</label>
+                                                <input type="text" class="form-control" placeholder="foto URL" name="foto">
+                                            </div>
+                                        </div>
+
                                         <button type="submit" class="btn btn-info" name="botonEditar">Editar</button>
                                     </form>
                                 </div>
@@ -78,9 +85,6 @@
             <?php endforeach ?>
         </div>
     </div>
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
