@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
     //3. Utilizar el metodo para consultarDatos()
     $usuarios = $transaccion->consultarDatos($consultaSQL);
 
-    print_r($usuarios);
+   
 
     ?>
 
@@ -46,7 +46,7 @@
                             </button>
                         </div>
                     </div>
-
+                    
                     <div class="modal fade" id="editar<?php echo ($usuario["id_Usuario"]) ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -81,10 +81,14 @@
                         </div>
                     </div>
                 </div>
-
             <?php endforeach ?>
         </div>
+        <div class="">
+        <a href="formularioRegistro.php?id=<?php echo ($usuario["id_Usuario"]) ?>" class="btn btn-danger">Agregar</a>
     </div>
+    </div>
+
+    
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
